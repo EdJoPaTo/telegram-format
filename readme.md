@@ -24,7 +24,7 @@ const {html: format} = require('telegram-format');
 import {markdown as format} from 'telegram-format';
 import {html as format} from 'telegram-format';
 
-format.bold('hey'); +  + format.url('me', 'https://edjopato.de');
+format.bold('hey');
 //=> '*hey*'
 
 format.italic('you');
