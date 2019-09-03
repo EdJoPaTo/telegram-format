@@ -1,6 +1,6 @@
 {
 	"name": "telegram-format",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Format Telegram message texts with Markdown or HTML",
 	"license": "MIT",
 	"repository": "EdJoPaTo/telegram-format",
