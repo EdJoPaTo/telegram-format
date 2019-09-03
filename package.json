@@ -77,6 +77,7 @@
 		"semicolon": false,
 		"rules": {
 			"ava/no-ignored-test-files": "off",
+			"@typescript-eslint/camelcase": "off",
 			"@typescript-eslint/semi": [
 				"error",
 				"never"

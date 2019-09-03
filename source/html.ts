@@ -22,6 +22,7 @@ function url(label: string, url: string): string {
 }
 
 export const html: Formatter = {
+	parse_mode: 'HTML',
 	escape,
 	bold,
 	italic,

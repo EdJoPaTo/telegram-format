@@ -19,6 +19,7 @@ function url(label: string, url: string): string {
 }
 
 export const markdown: Formatter = {
+	parse_mode: 'Markdown',
 	escape,
 	bold,
 	italic,
