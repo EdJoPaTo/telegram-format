@@ -8,6 +8,7 @@
 
 > Format Telegram message texts with Markdown or HTML
 
+This library abstracts the [formatting options](https://core.telegram.org/bots/api#formatting-options) for you.
 
 ## Install
 
