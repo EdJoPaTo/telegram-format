@@ -21,3 +21,7 @@ test('escape', t => {
 test('bold malicious', t => {
 	t.is(format.bold('bo<ld'), '<b>bo&lt;ld</b>')
 })
+
+test('user mention', t => {
+	t.is(format.userMention('inline mention of a user', 123456789), '<a href="tg://user?id=123456789">inline mention of a user</a>')
+})

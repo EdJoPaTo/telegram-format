@@ -68,6 +68,20 @@ Type: `string`
 
 Url which is called when the user taps on the label
 
+### userMention(label, userId)
+
+#### label
+
+Type: `string`
+
+Label of the user mention. Might be used with the first name for example.
+
+#### userID
+
+Type: `number`
+
+User id to which is linked
+
 ### escape(text)
 
 #### text

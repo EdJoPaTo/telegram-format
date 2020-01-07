@@ -25,3 +25,7 @@ test('bold malicious', t => {
 test('italic malicious', t => {
 	t.is(format.italic('ita_lic'), '_italic_')
 })
+
+test('user mention', t => {
+	t.is(format.userMention('inline mention of a user', 123456789), '[inline mention of a user](tg://user?id=123456789)')
+})

@@ -21,10 +21,15 @@ function url(label: string, url: string): string {
 	return `<a href="${url}">${escape(label)}</a>`
 }
 
+function userMention(label: string, userId: number): string {
+	return url(label, `tg://user?id=${userId}`)
+}
+
 export const html: Formatter = {
 	parse_mode: 'HTML',
 	escape,
 	bold,
 	italic,
-	url
+	url,
+	userMention
 }
