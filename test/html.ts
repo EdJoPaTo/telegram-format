@@ -25,3 +25,15 @@ test('bold malicious', t => {
 test('user mention', t => {
 	t.is(format.userMention('inline mention of a user', 123456789), '<a href="tg://user?id=123456789">inline mention of a user</a>')
 })
+
+test('monospace', t => {
+	t.is(format.monospace('inline fixed-width code'), '<code>inline fixed-width code</code>')
+})
+
+test('monospaceBlock w/o language', t => {
+	t.is(format.monospaceBlock('pre-formatted fixed-width code block'), '<pre>pre-formatted fixed-width code block</pre>')
+})
+
+test('monospaceBlock w/ language', t => {
+	t.is(format.monospaceBlock('pre-formatted fixed-width code block written in the Python programming language', 'python'), '<pre><code class="language-python">pre-formatted fixed-width code block written in the Python programming language</code></pre>')
+})

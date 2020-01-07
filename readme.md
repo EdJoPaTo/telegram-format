@@ -54,6 +54,28 @@ Type: `string`
 
 Text to be formatted italic
 
+### monospace(text)
+
+#### text
+
+Type: `string`
+
+Text to be displayed as inline monospace
+
+### monospaceBlock(text, [programmingLanguage])
+
+#### text
+
+Type: `string`
+
+Text to be displayed as monospace block
+
+#### programmingLanguage
+
+Type: `string` (optional)
+
+Can be used to specify the programming language of the code
+
 ### url(label, url)
 
 #### label

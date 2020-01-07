@@ -17,6 +17,18 @@ function italic(text: string): string {
 	return `<i>${escape(text)}</i>`
 }
 
+function monospace(text: string): string {
+	return `<code>${text}</code>`
+}
+
+function monospaceBlock(text: string, programmingLanguage?: string): string {
+	if (programmingLanguage) {
+		return `<pre><code class="language-${programmingLanguage}">${text}</code></pre>`
+	}
+
+	return `<pre>${text}</pre>`
+}
+
 function url(label: string, url: string): string {
 	return `<a href="${url}">${escape(label)}</a>`
 }
@@ -30,6 +42,8 @@ export const html: Formatter = {
 	escape,
 	bold,
 	italic,
+	monospace,
+	monospaceBlock,
 	url,
 	userMention
 }

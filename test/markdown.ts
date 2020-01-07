@@ -29,3 +29,15 @@ test('italic malicious', t => {
 test('user mention', t => {
 	t.is(format.userMention('inline mention of a user', 123456789), '[inline mention of a user](tg://user?id=123456789)')
 })
+
+test('monospace', t => {
+	t.is(format.monospace('inline fixed-width code'), '`inline fixed-width code`')
+})
+
+test('monospaceBlock w/o language', t => {
+	t.is(format.monospaceBlock('pre-formatted fixed-width code block'), '```\npre-formatted fixed-width code block\n```')
+})
+
+test('monospaceBlock w/ language', t => {
+	t.is(format.monospaceBlock('pre-formatted fixed-width code block written in the Python programming language', 'python'), '```python\npre-formatted fixed-width code block written in the Python programming language\n```')
+})

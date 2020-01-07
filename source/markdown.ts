@@ -14,6 +14,25 @@ function italic(text: string): string {
 	return `_${text.replace(/_/, '')}_`
 }
 
+function monospace(text: string): string {
+	return '`' + text + '`'
+}
+
+function monospaceBlock(text: string, programmingLanguage?: string): string {
+	let result = ''
+	result += '```'
+
+	if (programmingLanguage) {
+		result += programmingLanguage
+	}
+
+	result += '\n'
+	result += text
+	result += '\n'
+	result += '```'
+	return result
+}
+
 function url(label: string, url: string): string {
 	return `[${label.replace(/\]/, '')}](${url.replace(/\)/, '')})`
 }
@@ -27,6 +46,8 @@ export const markdown: Formatter = {
 	escape,
 	bold,
 	italic,
+	monospace,
+	monospaceBlock,
 	url,
 	userMention
 }
