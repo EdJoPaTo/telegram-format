@@ -7,11 +7,11 @@ function escape(text: string): string {
 }
 
 function bold(text: string): string {
-	return `*${text.replace(/\*/, '')}*`
+	return `*${text.replace(/\*/g, '')}*`
 }
 
 function italic(text: string): string {
-	return `_${text.replace(/_/, '')}_`
+	return `_${text.replace(/_/g, '')}_`
 }
 
 function monospace(text: string): string {
