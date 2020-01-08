@@ -15,7 +15,7 @@ function italic(text: string): string {
 }
 
 function monospace(text: string): string {
-	return '`' + text + '`'
+	return '`' + text.replace(/`/g, '') + '`'
 }
 
 function monospaceBlock(text: string, programmingLanguage?: string): string {
@@ -27,7 +27,7 @@ function monospaceBlock(text: string, programmingLanguage?: string): string {
 	}
 
 	result += '\n'
-	result += text
+	result += text.replace(/```/g, '')
 	result += '\n'
 	result += '```'
 	return result

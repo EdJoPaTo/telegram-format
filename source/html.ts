@@ -18,15 +18,15 @@ function italic(text: string): string {
 }
 
 function monospace(text: string): string {
-	return `<code>${text}</code>`
+	return `<code>${escape(text)}</code>`
 }
 
 function monospaceBlock(text: string, programmingLanguage?: string): string {
 	if (programmingLanguage) {
-		return `<pre><code class="language-${programmingLanguage}">${text}</code></pre>`
+		return `<pre><code class="language-${programmingLanguage}">${escape(text)}</code></pre>`
 	}
 
-	return `<pre>${text}</pre>`
+	return `<pre>${escape(text)}</pre>`
 }
 
 function url(label: string, url: string): string {
