@@ -10,7 +10,7 @@
 		"url": "https://edjopato.de"
 	},
 	"engines": {
-		"node": ">=8"
+		"node": ">=10"
 	},
 	"scripts": {
 		"build": "del dist && tsc",
