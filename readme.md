@@ -20,10 +20,12 @@ $ npm install telegram-format
 ## Usage
 
 ```js
-const {markdown: format} = require('telegram-format');
 const {html: format} = require('telegram-format');
-import {markdown as format} from 'telegram-format';
+const {markdown: format} = require('telegram-format');
+const {markdownv2: format} = require('telegram-format');
 import {html as format} from 'telegram-format';
+import {markdown as format} from 'telegram-format';
+import {markdownv2 as format} from 'telegram-format';
 
 format.bold('hey');
 //=> '*hey*'
