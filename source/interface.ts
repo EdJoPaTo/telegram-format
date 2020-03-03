@@ -1,5 +1,5 @@
 export interface Formatter {
-	parse_mode: string;
+	parse_mode: 'HTML' | 'Markdown';
 	bold: (text: string) => string;
 	escape: (text: string) => string;
 	italic: (text: string) => string;
