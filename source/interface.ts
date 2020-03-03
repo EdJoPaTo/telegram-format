@@ -5,6 +5,8 @@ export interface Formatter {
 	italic: (text: string) => string;
 	monospace: (text: string) => string;
 	monospaceBlock: (text: string, programmingLanguage?: string) => string;
+	strikethrough: (text: string) => string;
+	underline: (text: string) => string;
 	url: (label: string, url: string) => string;
 	userMention: (label: string, userId: number) => string;
 }

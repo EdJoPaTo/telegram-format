@@ -10,6 +10,14 @@ test('italic', t => {
 	t.is(format.italic('italic'), '_italic_')
 })
 
+test('strikethrough', t => {
+	t.is(format.strikethrough('strikethrough'), '~strikethrough~')
+})
+
+test('underline', t => {
+	t.is(format.underline('underline'), '__underline__')
+})
+
 test('url', t => {
 	t.is(format.url('me', 'https://edjopato.de'), '[me](https://edjopato.de)')
 })

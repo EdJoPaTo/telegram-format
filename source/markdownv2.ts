@@ -18,6 +18,14 @@ function italic(text: string): string {
 	return `_${escape(text)}_`
 }
 
+function strikethrough(text: string): string {
+	return `~${escape(text)}~`
+}
+
+function underline(text: string): string {
+	return `__${escape(text)}__`
+}
+
 function monospace(text: string): string {
 	return '`' + escapeInteral(text, '`') + '`'
 }
@@ -50,6 +58,8 @@ export const markdownv2: Formatter = {
 	escape,
 	bold,
 	italic,
+	strikethrough,
+	underline,
 	monospace,
 	monospaceBlock,
 	url,

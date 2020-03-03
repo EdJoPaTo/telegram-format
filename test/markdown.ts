@@ -41,3 +41,21 @@ test('monospaceBlock w/o language', t => {
 test('monospaceBlock w/ language', t => {
 	t.is(format.monospaceBlock('pre-formatted fixed-width code block written in the Python programming language', 'python'), '```python\npre-formatted fixed-width code block written in the Python programming language\n```')
 })
+
+test('strikethrough', t => {
+	t.throws(
+		() => format.strikethrough('1337'),
+		{
+			message: 'strikethrough is not supported by Markdown. Use MarkdownV2 instead.'
+		}
+	)
+})
+
+test('underline', t => {
+	t.throws(
+		() => format.underline('1337'),
+		{
+			message: 'underline is not supported by Markdown. Use MarkdownV2 instead.'
+		}
+	)
+})

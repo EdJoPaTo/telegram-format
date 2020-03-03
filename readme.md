@@ -57,6 +57,22 @@ Type: `string`
 
 Text to be formatted italic
 
+### strikethrough(text)
+
+#### text
+
+Type: `string`
+
+Text to be striked through
+
+### underline(text)
+
+#### text
+
+Type: `string`
+
+Text to be underlined
+
 ### monospace(text)
 
 #### text

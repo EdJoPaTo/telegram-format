@@ -17,6 +17,14 @@ function italic(text: string): string {
 	return `<i>${escape(text)}</i>`
 }
 
+function strikethrough(text: string): string {
+	return `<s>${escape(text)}</s>`
+}
+
+function underline(text: string): string {
+	return `<u>${escape(text)}</u>`
+}
+
 function monospace(text: string): string {
 	return `<code>${escape(text)}</code>`
 }
@@ -42,6 +50,8 @@ export const html: Formatter = {
 	escape,
 	bold,
 	italic,
+	strikethrough,
+	underline,
 	monospace,
 	monospaceBlock,
 	url,

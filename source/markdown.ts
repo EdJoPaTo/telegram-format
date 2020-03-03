@@ -14,6 +14,14 @@ function italic(text: string): string {
 	return `_${text.replace(/_/g, '')}_`
 }
 
+function strikethrough(_text: string): string {
+	throw new Error('strikethrough is not supported by Markdown. Use MarkdownV2 instead.')
+}
+
+function underline(_text: string): string {
+	throw new Error('underline is not supported by Markdown. Use MarkdownV2 instead.')
+}
+
 function monospace(text: string): string {
 	return '`' + text.replace(/`/g, '') + '`'
 }
@@ -46,6 +54,8 @@ export const markdown: Formatter = {
 	escape,
 	bold,
 	italic,
+	strikethrough,
+	underline,
 	monospace,
 	monospaceBlock,
 	url,
