@@ -33,14 +33,11 @@
 	"devDependencies": {
 		"@sindresorhus/tsconfig": "^0.7.0",
 		"@types/node": "^13.1.4",
-		"@typescript-eslint/eslint-plugin": "^2.15.0",
-		"@typescript-eslint/parser": "^2.15.0",
 		"ava": "^2.1.0",
 		"del-cli": "^3.0.0",
-		"eslint-config-xo-typescript": "^0.24.1",
 		"nyc": "^15.0.0",
 		"typescript": "^3.7.4",
-		"xo": "^0.25.3"
+		"xo": "^0.27.2"
 	},
 	"ava": {
 		"babel": false,
