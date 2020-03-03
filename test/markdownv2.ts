@@ -26,12 +26,8 @@ test('escape', t => {
 	t.is(format.escape('[h_]e(*y)`'), '\\[h\\_\\]e\\(\\*y\\)\\`')
 })
 
-test('bold malicious', t => {
-	t.is(format.bold('bo*ld'), '*bo\\*ld*')
-})
-
-test('italic malicious', t => {
-	t.is(format.italic('ita_lic'), '_ita\\_lic_')
+test('bold italic', t => {
+	t.is(format.bold(format.italic('green')), '*_green_*')
 })
 
 test('user mention', t => {

@@ -10,19 +10,19 @@ function escape(text: string): string {
 }
 
 function bold(text: string): string {
-	return `<b>${escape(text)}</b>`
+	return `<b>${text}</b>`
 }
 
 function italic(text: string): string {
-	return `<i>${escape(text)}</i>`
+	return `<i>${text}</i>`
 }
 
 function strikethrough(text: string): string {
-	return `<s>${escape(text)}</s>`
+	return `<s>${text}</s>`
 }
 
 function underline(text: string): string {
-	return `<u>${escape(text)}</u>`
+	return `<u>${text}</u>`
 }
 
 function monospace(text: string): string {
@@ -38,7 +38,7 @@ function monospaceBlock(text: string, programmingLanguage?: string): string {
 }
 
 function url(label: string, url: string): string {
-	return `<a href="${url}">${escape(label)}</a>`
+	return `<a href="${url}">${label}</a>`
 }
 
 function userMention(label: string, userId: number): string {

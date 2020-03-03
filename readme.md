@@ -21,10 +21,8 @@ $ npm install telegram-format
 
 ```js
 const {html: format} = require('telegram-format');
-const {markdown: format} = require('telegram-format');
 const {markdownv2: format} = require('telegram-format');
 import {html as format} from 'telegram-format';
-import {markdown as format} from 'telegram-format';
 import {markdownv2 as format} from 'telegram-format';
 
 format.bold('hey');
@@ -33,11 +31,36 @@ format.bold('hey');
 format.italic('you');
 //=> '_you_'
 
+format.bold(format.italic('they'))
+//=> '*_they_*'
+
 format.url('me', 'https://edjopato.de');
 //=> '[me](https://edjopato.de)'
+
+// Legacy but still works
+const {markdown: format} = require('telegram-format');
+import {markdown as format} from 'telegram-format';
 ```
 
-When using format as an alias its easy to switch between Markdown and HTML fast
+When using `format` as an alias its easy to switch between Markdown and HTML fast.
+
+### Escaping Input
+
+When you have something that might be unescaped you need to use `format.escape` before formatting it.
+
+```js
+const username = 'master_yoda'
+format.italic(format.escape(username))
+```
+
+`format.monospace` and `format.monospaceBlock` will escape on their own as they only need to escape specific characters.
+You do not need to escape the input in this cases.
+
+`MarkdownV2` and `HTML` are fairly similar in escaping inputs but `Markdown` is not.
+`Markdown` is still supported by this library and by Telegram for legacy reasons but it behaves a bit differently.
+`Markdown` still escapes inputs and does not need `format.escape` before.
+Also nested formatting is not supported by telegram itself.
+Consider switching to `MarkdownV2` or `HTML` for simplicity reasons.
 
 ## API
 
