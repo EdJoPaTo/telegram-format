@@ -33,14 +33,15 @@
 	"dependencies": {},
 	"devDependencies": {
 		"@sindresorhus/tsconfig": "^0.7.0",
-		"@types/node": "^13.1.4",
+		"@types/node": "^14.0.23",
 		"ava": "^3.5.0",
 		"del-cli": "^3.0.0",
 		"nyc": "^15.0.0",
-		"typescript": "^3.7.4",
-		"xo": "^0.27.2"
+		"typescript": "^3.9.7",
+		"xo": "^0.32.1"
 	},
 	"nyc": {
+		"all": true,
 		"extension": [
 			".ts"
 		],
@@ -57,18 +58,9 @@
 		]
 	},
 	"xo": {
-		"extends": "xo-typescript",
-		"extensions": [
-			"ts"
-		],
 		"semicolon": false,
 		"rules": {
-			"ava/no-ignored-test-files": "off",
-			"@typescript-eslint/camelcase": "off",
-			"@typescript-eslint/semi": [
-				"error",
-				"never"
-			]
+			"ava/no-ignored-test-files": "off"
 		}
 	}
 }
