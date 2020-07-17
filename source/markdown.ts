@@ -42,7 +42,7 @@ function monospaceBlock(text: string, programmingLanguage?: string): string {
 }
 
 function url(label: string, url: string): string {
-	return `[${label.replace(/\]/, '')}](${url.replace(/\)/, '')})`
+	return `[${label.replace(/]/, '')}](${url.replace(/\)/, '')})`
 }
 
 function userMention(label: string, userId: number): string {
