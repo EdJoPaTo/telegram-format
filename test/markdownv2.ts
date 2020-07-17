@@ -26,6 +26,10 @@ test('escape', t => {
 	t.is(format.escape('[h_]e(*y)`'), '\\[h\\_\\]e\\(\\*y\\)\\`')
 })
 
+test('escape with number', t => {
+	t.is(format.escape('h1e2y'), 'h1e2y')
+})
+
 test('bold italic', t => {
 	t.is(format.bold(format.italic('green')), '*_green_*')
 })
