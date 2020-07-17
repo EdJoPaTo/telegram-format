@@ -27,7 +27,8 @@
 		"telegram",
 		"format",
 		"html",
-		"markdown"
+		"markdown",
+		"markdownv2"
 	],
 	"dependencies": {},
 	"devDependencies": {
