@@ -15,7 +15,7 @@
 	"scripts": {
 		"build": "del dist && tsc",
 		"prepack": "npm run build",
-		"test": "tsc && xo && nyc ava"
+		"test": "tsc --sourceMap && xo && nyc ava"
 	},
 	"main": "dist/source",
 	"types": "dist/source",
@@ -37,8 +37,8 @@
 		"ava": "^3.5.0",
 		"del-cli": "^3.0.0",
 		"nyc": "^15.0.0",
-		"typescript": "^3.9.7",
-		"xo": "^0.32.1"
+		"typescript": "^4.0.2",
+		"xo": "^0.33.0"
 	},
 	"nyc": {
 		"all": true,
@@ -50,6 +50,7 @@
 			"source"
 		],
 		"exclude": [
+			"**/*.d.ts",
 			"**/*.test.ts"
 		],
 		"reporter": [
@@ -60,7 +61,19 @@
 	"xo": {
 		"semicolon": false,
 		"rules": {
+			"@typescript-eslint/prefer-readonly-parameter-types": "error",
 			"ava/no-ignored-test-files": "off"
-		}
+		},
+		"overrides": [
+			{
+				"files": [
+					"**/*.test.*",
+					"test/**/*.*"
+				],
+				"rules": {
+					"@typescript-eslint/prefer-readonly-parameter-types": "off"
+				}
+			}
+		]
 	}
 }
