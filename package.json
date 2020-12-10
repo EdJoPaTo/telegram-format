@@ -13,7 +13,7 @@
 		"node": ">=10"
 	},
 	"scripts": {
-		"build": "del dist && tsc",
+		"build": "del-cli dist && tsc",
 		"prepack": "npm run build",
 		"test": "tsc --sourceMap && xo && nyc ava"
 	},
