@@ -15,7 +15,7 @@ test('url', t => {
 })
 
 test('escape', t => {
-	t.is(format.escape('[h_]e(*y)`'), 'hey')
+	t.is(format.escape('[h_]e*y`'), '\\[h\\_\\]e\\*y\\`')
 })
 
 test('bold malicious', t => {

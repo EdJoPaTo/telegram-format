@@ -3,7 +3,7 @@
 import {Formatter} from './interface'
 
 function escape(text: string): string {
-	return text.replace(/[*_`[\]()]/g, '')
+	return text.replace(/[*_`[\]]/g, '\\$&')
 }
 
 function bold(text: string): string {
