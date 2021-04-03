@@ -7,7 +7,7 @@ function escapeInteral(text: string, escapeChars: string): string {
 }
 
 function escape(text: string): string {
-	return text.replace(/[_*[\]()~`>#+\-=|{}.!]/g, '\\$&')
+	return text.replace(/[_*[\]()~`>#+\-=|{}.!\\]/g, '\\$&')
 }
 
 function bold(text: string): string {
