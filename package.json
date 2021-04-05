@@ -2,27 +2,6 @@
 	"name": "telegram-format",
 	"version": "2.0.1",
 	"description": "Format Telegram message texts with Markdown or HTML",
-	"license": "MIT",
-	"repository": "EdJoPaTo/telegram-format",
-	"author": {
-		"name": "EdJoPaTo",
-		"email": "telegram-format-npm-package@edjopato.de",
-		"url": "https://edjopato.de"
-	},
-	"engines": {
-		"node": ">=10"
-	},
-	"scripts": {
-		"build": "del-cli dist && tsc",
-		"prepack": "npm run build",
-		"test": "tsc --sourceMap && xo && nyc ava"
-	},
-	"main": "dist/source",
-	"types": "dist/source",
-	"files": [
-		"dist/source",
-		"!*.test.*"
-	],
 	"keywords": [
 		"telegram",
 		"format",
@@ -30,7 +9,21 @@
 		"markdown",
 		"markdownv2"
 	],
-	"dependencies": {},
+	"license": "MIT",
+	"repository": "EdJoPaTo/telegram-format",
+	"author": {
+		"name": "EdJoPaTo",
+		"email": "telegram-format-npm-package@edjopato.de",
+		"url": "https://edjopato.de"
+	},
+	"scripts": {
+		"build": "del-cli dist && tsc",
+		"prepack": "npm run build",
+		"test": "tsc --sourceMap && xo && nyc ava"
+	},
+	"engines": {
+		"node": ">=10"
+	},
 	"devDependencies": {
 		"@sindresorhus/tsconfig": "^0.9.0",
 		"@types/node": "^14.0.23",
@@ -40,19 +33,14 @@
 		"typescript": "^4.1.2",
 		"xo": "^0.38.1"
 	},
+	"files": [
+		"dist/source",
+		"!*.test.*"
+	],
+	"main": "dist/source",
+	"types": "dist/source",
 	"nyc": {
 		"all": true,
-		"extension": [
-			".ts"
-		],
-		"include": [
-			"dist/source",
-			"source"
-		],
-		"exclude": [
-			"**/*.d.ts",
-			"**/*.test.ts"
-		],
 		"reporter": [
 			"lcov",
 			"text"
