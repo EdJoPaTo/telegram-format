@@ -5,6 +5,7 @@
 		"test"
 	],
 	"compilerOptions": {
+		"module": "CommonJS",
 		"outDir": "dist"
 	}
 }
