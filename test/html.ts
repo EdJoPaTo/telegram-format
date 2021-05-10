@@ -31,7 +31,7 @@ test('bold italic', t => {
 })
 
 test('user mention', t => {
-	t.is(format.userMention('inline mention of a user', 123456789), '<a href="tg://user?id=123456789">inline mention of a user</a>')
+	t.is(format.userMention('inline mention of a user', 123_456_789), '<a href="tg://user?id=123456789">inline mention of a user</a>')
 })
 
 test('monospace', t => {

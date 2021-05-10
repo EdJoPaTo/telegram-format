@@ -27,7 +27,7 @@ test('italic malicious', t => {
 })
 
 test('user mention', t => {
-	t.is(format.userMention('inline mention of a user', 123456789), '[inline mention of a user](tg://user?id=123456789)')
+	t.is(format.userMention('inline mention of a user', 123_456_789), '[inline mention of a user](tg://user?id=123456789)')
 })
 
 test('monospace', t => {
