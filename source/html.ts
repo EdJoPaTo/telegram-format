@@ -55,5 +55,5 @@ export const html: Formatter = {
 	monospace,
 	monospaceBlock,
 	url,
-	userMention
+	userMention,
 }

@@ -59,5 +59,5 @@ export const markdown: Formatter = {
 	monospace,
 	monospaceBlock,
 	url,
-	userMention
+	userMention,
 }
