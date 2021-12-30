@@ -43,19 +43,19 @@ test('monospaceBlock w/ language', t => {
 })
 
 test('strikethrough', t => {
-	t.throws(() => format.strikethrough('1337'),		{
+	t.throws(() => format.strikethrough('1337'), {
 		message: 'strikethrough is not supported by Markdown. Use MarkdownV2 instead.',
 	})
 })
 
 test('underline', t => {
-	t.throws(() => format.underline('1337'),		{
+	t.throws(() => format.underline('1337'), {
 		message: 'underline is not supported by Markdown. Use MarkdownV2 instead.',
 	})
 })
 
 test('spoiler', t => {
-	t.throws(() => format.spoiler('1337'),		{
+	t.throws(() => format.spoiler('1337'), {
 		message: 'spoiler is not supported by Markdown. Use MarkdownV2 instead.',
 	})
 })
