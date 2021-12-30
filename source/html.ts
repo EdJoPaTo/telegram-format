@@ -25,6 +25,10 @@ function underline(text: string): string {
 	return `<u>${text}</u>`
 }
 
+function spoiler(text: string): string {
+	return `<span class="tg-spoiler">${text}</span>`
+}
+
 function monospace(text: string): string {
 	return `<code>${escape(text)}</code>`
 }
@@ -52,6 +56,7 @@ export const html: Formatter = {
 	italic,
 	strikethrough,
 	underline,
+	spoiler,
 	monospace,
 	monospaceBlock,
 	url,

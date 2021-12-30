@@ -18,6 +18,10 @@ test('underline', t => {
 	t.is(format.underline('underline'), '__underline__')
 })
 
+test('spoiler', t => {
+	t.is(format.spoiler('spoiler'), '||spoiler||')
+})
+
 test('url', t => {
 	t.is(format.url('me', 'https://edjopato.de'), '[me](https://edjopato.de)')
 })

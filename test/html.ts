@@ -18,6 +18,10 @@ test('underline', t => {
 	t.is(format.underline('underline'), '<u>underline</u>')
 })
 
+test('spoiler', t => {
+	t.is(format.spoiler('spoiler'), '<span class="tg-spoiler">spoiler</span>')
+})
+
 test('url', t => {
 	t.is(format.url('me', 'https://edjopato.de'), '<a href="https://edjopato.de">me</a>')
 })

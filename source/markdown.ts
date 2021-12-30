@@ -22,6 +22,10 @@ function underline(_text: string): string {
 	throw new Error('underline is not supported by Markdown. Use MarkdownV2 instead.')
 }
 
+function spoiler(_text: string): string {
+	throw new Error('spoiler is not supported by Markdown. Use MarkdownV2 instead.')
+}
+
 function monospace(text: string): string {
 	return '`' + text.replace(/`/g, '') + '`'
 }
@@ -56,6 +60,7 @@ export const markdown: Formatter = {
 	italic,
 	strikethrough,
 	underline,
+	spoiler,
 	monospace,
 	monospaceBlock,
 	url,

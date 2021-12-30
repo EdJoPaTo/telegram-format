@@ -26,6 +26,10 @@ function underline(text: string): string {
 	return `__${text}__`
 }
 
+function spoiler(text: string): string {
+	return `||${text}||`
+}
+
 function monospace(text: string): string {
 	return '`' + escapeInteral(text, '`') + '`'
 }
@@ -60,6 +64,7 @@ export const markdownv2: Formatter = {
 	italic,
 	strikethrough,
 	underline,
+	spoiler,
 	monospace,
 	monospaceBlock,
 	url,

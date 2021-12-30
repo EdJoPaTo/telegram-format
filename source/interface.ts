@@ -5,6 +5,7 @@ export interface Formatter {
 	italic: (text: string) => string;
 	monospace: (text: string) => string;
 	monospaceBlock: (text: string, programmingLanguage?: string) => string;
+	spoiler: (text: string) => string;
 	strikethrough: (text: string) => string;
 	underline: (text: string) => string;
 	url: (label: string, url: string) => string;

@@ -53,3 +53,9 @@ test('underline', t => {
 		message: 'underline is not supported by Markdown. Use MarkdownV2 instead.',
 	})
 })
+
+test('spoiler', t => {
+	t.throws(() => format.spoiler('1337'),		{
+		message: 'spoiler is not supported by Markdown. Use MarkdownV2 instead.',
+	})
+})
