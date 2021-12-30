@@ -2,7 +2,7 @@
 
 import {Formatter} from './interface'
 
-function escapeInteral(text: string, escapeChars: string): string {
+function escapeInternal(text: string, escapeChars: string): string {
 	return text.replace(new RegExp(`[${escapeChars}\\\\]`, 'g'), '\\$&')
 }
 
@@ -31,7 +31,7 @@ function spoiler(text: string): string {
 }
 
 function monospace(text: string): string {
-	return '`' + escapeInteral(text, '`') + '`'
+	return '`' + escapeInternal(text, '`') + '`'
 }
 
 function monospaceBlock(text: string, programmingLanguage?: string): string {
@@ -43,7 +43,7 @@ function monospaceBlock(text: string, programmingLanguage?: string): string {
 	}
 
 	result += '\n'
-	result += escapeInteral(text, '`')
+	result += escapeInternal(text, '`')
 	result += '\n'
 	result += '```'
 	return result
