@@ -50,7 +50,7 @@ function monospaceBlock(text: string, programmingLanguage?: string): string {
 }
 
 function url(label: string, url: string): string {
-	return `[${label}](${url})`
+	return `[${label}](${escapeInternal(url, ')')})`
 }
 
 function userMention(label: string, userId: number): string {
