@@ -51,11 +51,7 @@
 		"rules": {
 			"@typescript-eslint/naming-convention": "off",
 			"@typescript-eslint/prefer-readonly-parameter-types": "error",
-			"ava/no-ignored-test-files": "off",
-			"import/extensions": [
-				"error",
-				"never"
-			]
+			"ava/no-ignored-test-files": "off"
 		},
 		"overrides": [
 			{

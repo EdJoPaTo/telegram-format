@@ -1,5 +1,5 @@
-export * from './interface'
+export * from './interface.js'
 
-export * from './html'
-export * from './markdown'
-export * from './markdownv2'
+export * from './html.js'
+export * from './markdown.js'
+export * from './markdownv2.js'

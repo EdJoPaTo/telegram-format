@@ -1,6 +1,6 @@
 // https://core.telegram.org/bots/api#html-style
 
-import {Formatter} from './interface'
+import {Formatter} from './interface.js'
 
 function escape(text: string): string {
 	return text
