@@ -2,8 +2,6 @@
 
 [![NPM Version](https://img.shields.io/npm/v/telegram-format.svg)](https://www.npmjs.com/package/telegram-format)
 [![node](https://img.shields.io/node/v/telegram-format.svg)](https://www.npmjs.com/package/telegram-format)
-[![Dependency Status](https://david-dm.org/EdJoPaTo/telegram-format/status.svg)](https://david-dm.org/EdJoPaTo/telegram-format)
-[![Dev Dependency Status](https://david-dm.org/EdJoPaTo/telegram-format/dev-status.svg)](https://david-dm.org/EdJoPaTo/telegram-format?type=dev)
 
 > Format Telegram message texts with Markdown or HTML
 
@@ -11,10 +9,9 @@ This library abstracts the [formatting options](https://core.telegram.org/bots/a
 
 ## Install
 
+```bash
+npm install telegram-format
 ```
-$ npm install telegram-format
-```
-
 
 ## Usage
 
