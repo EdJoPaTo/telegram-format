@@ -1,6 +1,6 @@
 // https://core.telegram.org/bots/api#markdownv2-style
 
-import {Formatter} from './interface.js'
+import type {Formatter} from './types.js'
 
 function escapeInternal(text: string, escapeChars: string): string {
 	return text.replace(new RegExp(`[${escapeChars}\\\\]`, 'g'), '\\$&')

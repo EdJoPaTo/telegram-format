@@ -1,6 +1,6 @@
 // https://core.telegram.org/bots/api#markdown-style
 
-import {Formatter} from './interface.js'
+import type {Formatter} from './types.js'
 
 function escape(text: string): string {
 	return text.replace(/[*_`[\]()]/g, '')

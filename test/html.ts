@@ -23,7 +23,10 @@ test('spoiler', t => {
 })
 
 test('url', t => {
-	t.is(format.url('me', 'https://edjopato.de'), '<a href="https://edjopato.de">me</a>')
+	t.is(
+		format.url('me', 'https://edjopato.de'),
+		'<a href="https://edjopato.de">me</a>',
+	)
 })
 
 test('escape', t => {
@@ -35,17 +38,32 @@ test('bold italic', t => {
 })
 
 test('user mention', t => {
-	t.is(format.userMention('inline mention of a user', 123_456_789), '<a href="tg://user?id=123456789">inline mention of a user</a>')
+	t.is(
+		format.userMention('inline mention of a user', 123_456_789),
+		'<a href="tg://user?id=123456789">inline mention of a user</a>',
+	)
 })
 
 test('monospace', t => {
-	t.is(format.monospace('inline fixed-width code'), '<code>inline fixed-width code</code>')
+	t.is(
+		format.monospace('inline fixed-width code'),
+		'<code>inline fixed-width code</code>',
+	)
 })
 
 test('monospaceBlock w/o language', t => {
-	t.is(format.monospaceBlock('pre-formatted fixed-width code block'), '<pre>pre-formatted fixed-width code block</pre>')
+	t.is(
+		format.monospaceBlock('pre-formatted fixed-width code block'),
+		'<pre>pre-formatted fixed-width code block</pre>',
+	)
 })
 
 test('monospaceBlock w/ language', t => {
-	t.is(format.monospaceBlock('pre-formatted fixed-width code block written in the Python programming language', 'python'), '<pre><code class="language-python">pre-formatted fixed-width code block written in the Python programming language</code></pre>')
+	t.is(
+		format.monospaceBlock(
+			'pre-formatted fixed-width code block written in the Python programming language',
+			'python',
+		),
+		'<pre><code class="language-python">pre-formatted fixed-width code block written in the Python programming language</code></pre>',
+	)
 })

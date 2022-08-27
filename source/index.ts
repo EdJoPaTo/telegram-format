@@ -1,4 +1,4 @@
-export * from './interface.js'
+export * from './types.js'
 
 export * from './html.js'
 export * from './markdown.js'
