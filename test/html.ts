@@ -1,5 +1,4 @@
 import test from 'ava'
-
 import {html as format} from '../source/index.js'
 
 test('bold', t => {
