@@ -23,10 +23,10 @@ jobs:
         run: deno lint
 
       - name: Check
-        run: deno check source/mod.ts
+        run: deno task check
 
       - name: Test
-        run: deno test
+        run: deno task test
 
       - name: Backport
         un: deno task backport
