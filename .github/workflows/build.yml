@@ -7,11 +7,10 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  fmt-lint-check-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
       - uses: denoland/setup-deno@v1
         with:
           deno-version: v1.x
@@ -28,5 +27,13 @@ jobs:
       - name: Test
         run: deno task test
 
+  backport:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: npm install --ignore-scripts
+
       - name: Backport
-        run: deno task backport
+        run: npm run backport
