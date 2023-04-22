@@ -29,4 +29,4 @@ jobs:
         run: deno task test
 
       - name: Backport
-        un: deno task backport
+        run: deno task backport
