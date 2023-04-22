@@ -1,68 +1,35 @@
 {
-	"name": "telegram-format",
-	"version": "2.1.0",
-	"description": "Format Telegram message texts with Markdown or HTML",
-	"keywords": [
-		"telegram",
-		"format",
-		"html",
-		"markdown",
-		"markdownv2"
-	],
-	"license": "MIT",
-	"repository": "EdJoPaTo/telegram-format",
-	"author": {
-		"name": "EdJoPaTo",
-		"email": "telegram-format-npm-package@edjopato.de",
-		"url": "https://edjopato.de"
-	},
-	"scripts": {
-		"build": "del-cli dist && tsc",
-		"prepack": "npm run build",
-		"test": "tsc --sourceMap && xo && nyc ava"
-	},
-	"type": "commonjs",
-	"engines": {
-		"node": ">=14"
-	},
-	"devDependencies": {
-		"@sindresorhus/tsconfig": "^3.0.0",
-		"ava": "^5.0.1",
-		"del-cli": "^5.0.0",
-		"nyc": "^15.0.0",
-		"typescript": "^5.0.2",
-		"xo": "^0.54.0"
-	},
-	"files": [
-		"dist/source",
-		"!*.test.*"
-	],
-	"main": "./dist/source/index.js",
-	"types": "./dist/source/index.d.ts",
-	"nyc": {
-		"all": true,
-		"reporter": [
-			"lcov",
-			"text"
-		]
-	},
-	"xo": {
-		"semicolon": false,
-		"rules": {
-			"@typescript-eslint/naming-convention": "off",
-			"@typescript-eslint/prefer-readonly-parameter-types": "error",
-			"ava/no-ignored-test-files": "off"
-		},
-		"overrides": [
-			{
-				"files": [
-					"**/*.test.*",
-					"test/**/*.*"
-				],
-				"rules": {
-					"@typescript-eslint/prefer-readonly-parameter-types": "off"
-				}
-			}
-		]
-	}
+  "name": "telegram-format",
+  "version": "2.1.0",
+  "description": "Format Telegram message texts with Markdown or HTML",
+  "keywords": [
+    "telegram",
+    "format",
+    "html",
+    "markdown",
+    "markdownv2"
+  ],
+  "license": "MIT",
+  "repository": "EdJoPaTo/telegram-format",
+  "author": {
+    "name": "EdJoPaTo",
+    "email": "telegram-format-npm-package@edjopato.de",
+    "url": "https://edjopato.de"
+  },
+  "scripts": {
+    "prepare": "npm run backport",
+    "backport": "deno2node tsconfig.json"
+  },
+  "type": "commonjs",
+  "engines": {
+    "node": ">=14"
+  },
+  "devDependencies": {
+    "@types/node": "^14.18.22",
+    "@sindresorhus/tsconfig": "^3.0.0",
+    "deno2node": "^1.8.1"
+  },
+  "files": ["dist/"],
+  "main": "./dist/mod.js",
+  "types": "./dist/mod.d.ts"
 }

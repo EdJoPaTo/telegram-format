@@ -1,68 +1,74 @@
 // https://core.telegram.org/bots/api#markdown-style
 
-import type {Formatter} from './types.js'
+import type { Formatter } from "./types.ts";
 
 function escape(text: string): string {
-	return text.replace(/[*_`[\]()]/g, '')
+  return text.replace(/[*_`[\]()]/g, "");
 }
 
 function bold(text: string): string {
-	return `*${text.replace(/\*/g, '')}*`
+  return `*${text.replace(/\*/g, "")}*`;
 }
 
 function italic(text: string): string {
-	return `_${text.replace(/_/g, '')}_`
+  return `_${text.replace(/_/g, "")}_`;
 }
 
 function strikethrough(_text: string): string {
-	throw new Error('strikethrough is not supported by Markdown. Use MarkdownV2 instead.')
+  throw new Error(
+    "strikethrough is not supported by Markdown. Use MarkdownV2 instead.",
+  );
 }
 
 function underline(_text: string): string {
-	throw new Error('underline is not supported by Markdown. Use MarkdownV2 instead.')
+  throw new Error(
+    "underline is not supported by Markdown. Use MarkdownV2 instead.",
+  );
 }
 
 function spoiler(_text: string): string {
-	throw new Error('spoiler is not supported by Markdown. Use MarkdownV2 instead.')
+  throw new Error(
+    "spoiler is not supported by Markdown. Use MarkdownV2 instead.",
+  );
 }
 
 function monospace(text: string): string {
-	return '`' + text.replace(/`/g, '') + '`'
+  return "`" + text.replace(/`/g, "") + "`";
 }
 
 function monospaceBlock(text: string, programmingLanguage?: string): string {
-	let result = ''
-	result += '```'
+  let result = "";
+  result += "```";
 
-	if (programmingLanguage) {
-		result += programmingLanguage
-	}
+  if (programmingLanguage) {
+    result += programmingLanguage;
+  }
 
-	result += '\n'
-	result += text.replace(/```/g, '')
-	result += '\n'
-	result += '```'
-	return result
+  result += "\n";
+  result += text.replace(/```/g, "");
+  result += "\n";
+  result += "```";
+  return result;
 }
 
 function url(label: string, url: string): string {
-	return `[${label.replace(/]/, '')}](${url.replace(/\)/, '')})`
+  return `[${label.replace(/]/, "")}](${url.replace(/\)/, "")})`;
 }
 
 function userMention(label: string, userId: number): string {
-	return url(label, `tg://user?id=${userId}`)
+  return url(label, `tg://user?id=${userId}`);
 }
 
 export const markdown: Formatter = {
-	parse_mode: 'Markdown',
-	escape,
-	bold,
-	italic,
-	strikethrough,
-	underline,
-	spoiler,
-	monospace,
-	monospaceBlock,
-	url,
-	userMention,
-}
+  parse_mode: "Markdown",
+  escape,
+  bold,
+  italic,
+  strikethrough,
+  underline,
+  spoiler,
+  monospace,
+  monospaceBlock,
+  url,
+  userMention,
+};

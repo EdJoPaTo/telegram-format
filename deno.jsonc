@@ -1,0 +1,16 @@
+{
+  "lock": false,
+  "tasks": {
+    "check": "deno cache --check=all source/mod.ts",
+    "test": "deno test test/",
+    "backport": "deno run --no-prompt --allow-read=. --allow-write=. https://deno.land/x/deno2node@v1.8.1/src/cli.ts tsconfig.json"
+  },
+  "fmt": {
+    "files": {
+      "exclude": ["node_modules/", "dist/"]
+    }
+  },
+  "lint": {
+    "files": { "exclude": ["node_modules/", "dist/"] }
+  }
+}
