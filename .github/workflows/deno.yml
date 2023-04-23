@@ -1,4 +1,4 @@
-name: Build
+name: Deno
 
 on:
   push:
@@ -7,25 +7,28 @@ on:
     branches: [main]
 
 jobs:
-  fmt-lint-check-test:
+  denofmt-and-lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - uses: denoland/setup-deno@v1
         with:
           deno-version: v1.x
+      - uses: actions/checkout@v3
 
-      - name: Format
-        run: deno fmt --check
+      - run: deno lint
+      - run: deno fmt --check
 
-      - name: Lint
-        run: deno lint
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+      - uses: actions/checkout@v3
 
-      - name: Check
-        run: deno task check
-
-      - name: Test
-        run: deno test
+      - run: deno cache source/*.ts
+      - run: deno task check
+      - run: deno test
 
   backport:
     runs-on: ubuntu-latest
@@ -37,3 +40,5 @@ jobs:
 
       - name: Backport
         run: npm run backport
+
+      - run: npm pack
