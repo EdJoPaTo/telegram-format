@@ -1,5 +1,5 @@
-import { assertEquals, assertThrows } from "./test_deps.ts";
-import { markdown as format } from "../source/mod.ts";
+import { assertEquals } from "./deps.test.ts";
+import { markdownv2 as format } from "../source/mod.ts";
 
 Deno.test("bold", () => {
   assertEquals(format.bold("bold"), "*bold*");
@@ -7,6 +7,18 @@ Deno.test("bold", () => {
 
 Deno.test("italic", () => {
   assertEquals(format.italic("italic"), "_italic_");
+});
+
+Deno.test("strikethrough", () => {
+  assertEquals(format.strikethrough("strikethrough"), "~strikethrough~");
+});
+
+Deno.test("underline", () => {
+  assertEquals(format.underline("underline"), "__underline__");
+});
+
+Deno.test("spoiler", () => {
+  assertEquals(format.spoiler("spoiler"), "||spoiler||");
 });
 
 Deno.test("url", () => {
@@ -17,15 +29,15 @@ Deno.test("url", () => {
 });
 
 Deno.test("escape", () => {
-  assertEquals(format.escape("[h_]e(*y)`"), "hey");
+  assertEquals(format.escape("[h_]e(*y\\)`"), "\\[h\\_\\]e\\(\\*y\\\\\\)\\`");
 });
 
-Deno.test("bold malicious", () => {
-  assertEquals(format.bold("bo*ld"), "*bold*");
+Deno.test("escape with number", () => {
+  assertEquals(format.escape("h1e2y"), "h1e2y");
 });
 
-Deno.test("italic malicious", () => {
-  assertEquals(format.italic("ita_lic"), "_italic_");
+Deno.test("bold italic", () => {
+  assertEquals(format.bold(format.italic("green")), "*_green_*");
 });
 
 Deno.test("user mention", () => {
@@ -57,16 +69,4 @@ Deno.test("monospaceBlock w/ language", () => {
     ),
     "```python\npre-formatted fixed-width code block written in the Python programming language\n```",
   );
-});
-
-Deno.test("strikethrough", () => {
-  assertThrows(() => format.strikethrough("1337"));
-});
-
-Deno.test("underline", () => {
-  assertThrows(() => format.underline("1337"));
-});
-
-Deno.test("spoiler", () => {
-  assertThrows(() => format.spoiler("1337"));
 });

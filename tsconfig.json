@@ -1,6 +1,10 @@
 {
   "extends": "@sindresorhus/tsconfig/tsconfig.json",
   "include": ["source"],
+  "exclude": [
+    "**/*.test.*",
+    "**/test.*"
+  ],
   "compilerOptions": {
     "rootDir": "source",
     "module": "CommonJS",
