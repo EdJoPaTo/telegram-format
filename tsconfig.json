@@ -6,7 +6,6 @@
     "**/test.*"
   ],
   "compilerOptions": {
-    "rootDir": "source",
     "module": "CommonJS",
     "outDir": "dist"
   }
