@@ -17,8 +17,7 @@
     "url": "https://edjopato.de"
   },
   "scripts": {
-    "prepare": "npm run backport",
-    "backport": "deno2node tsconfig.json"
+    "prepare": "deno2node"
   },
   "type": "commonjs",
   "engines": {
