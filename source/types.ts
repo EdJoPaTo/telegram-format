@@ -10,4 +10,4 @@ export type Formatter = {
 	underline: (text: string) => string;
 	url: (label: string, url: string) => string;
 	userMention: (label: string, userId: number) => string;
-}
+};

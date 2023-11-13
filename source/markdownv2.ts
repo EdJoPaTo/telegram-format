@@ -1,60 +1,60 @@
 // https://core.telegram.org/bots/api#markdownv2-style
 
-import type {Formatter} from './types.js'
+import type {Formatter} from './types.js';
 
 function escapeInternal(text: string, escapeChars: string): string {
-	return text.replace(new RegExp(`[${escapeChars}\\\\]`, 'g'), '\\$&')
+	return text.replace(new RegExp(`[${escapeChars}\\\\]`, 'g'), '\\$&');
 }
 
 function escape(text: string): string {
-	return text.replace(/[_*[\]()~`>#+\-=|{}.!\\]/g, '\\$&')
+	return text.replace(/[_*[\]()~`>#+\-=|{}.!\\]/g, '\\$&');
 }
 
 function bold(text: string): string {
-	return `*${text}*`
+	return `*${text}*`;
 }
 
 function italic(text: string): string {
-	return `_${text}_`
+	return `_${text}_`;
 }
 
 function strikethrough(text: string): string {
-	return `~${text}~`
+	return `~${text}~`;
 }
 
 function underline(text: string): string {
-	return `__${text}__`
+	return `__${text}__`;
 }
 
 function spoiler(text: string): string {
-	return `||${text}||`
+	return `||${text}||`;
 }
 
 function monospace(text: string): string {
-	return '`' + escapeInternal(text, '`') + '`'
+	return '`' + escapeInternal(text, '`') + '`';
 }
 
 function monospaceBlock(text: string, programmingLanguage?: string): string {
-	let result = ''
-	result += '```'
+	let result = '';
+	result += '```';
 
 	if (programmingLanguage) {
-		result += programmingLanguage
+		result += programmingLanguage;
 	}
 
-	result += '\n'
-	result += escapeInternal(text, '`')
-	result += '\n'
-	result += '```'
-	return result
+	result += '\n';
+	result += escapeInternal(text, '`');
+	result += '\n';
+	result += '```';
+	return result;
 }
 
 function url(label: string, url: string): string {
-	return `[${label}](${escapeInternal(url, ')')})`
+	return `[${label}](${escapeInternal(url, ')')})`;
 }
 
 function userMention(label: string, userId: number): string {
-	return url(label, `tg://user?id=${userId}`)
+	return url(label, `tg://user?id=${userId}`);
 }
 
 export const markdownv2: Formatter = {
@@ -69,4 +69,4 @@ export const markdownv2: Formatter = {
 	monospaceBlock,
 	url,
 	userMention,
-}
+};
