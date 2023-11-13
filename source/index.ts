@@ -1,5 +1,5 @@
-export * from './types.js';
+export type {Formatter} from './types.js';
 
-export * from './html.js';
-export * from './markdown.js';
-export * from './markdownv2.js';
+export {html} from './html.js';
+export {markdown} from './markdown.js';
+export {markdownv2} from './markdownv2.js';
