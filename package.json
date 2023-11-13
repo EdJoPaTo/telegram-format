@@ -19,17 +19,17 @@
 	"scripts": {
 		"build": "del-cli dist && tsc",
 		"prepack": "npm run build",
-		"test": "tsc --sourceMap && xo && nyc ava"
+		"test": "tsc --sourceMap && xo && c8 --all ava"
 	},
-	"type": "commonjs",
+	"type": "module",
 	"engines": {
 		"node": ">=14"
 	},
 	"devDependencies": {
-		"@sindresorhus/tsconfig": "^3.0.0",
+		"@sindresorhus/tsconfig": "^5.0.0",
 		"ava": "^5.0.1",
+		"c8": "^8.0.1",
 		"del-cli": "^5.0.0",
-		"nyc": "^15.0.0",
 		"typescript": "^5.0.2",
 		"xo": "^0.54.0"
 	},
@@ -39,13 +39,6 @@
 	],
 	"main": "./dist/source/index.js",
 	"types": "./dist/source/index.d.ts",
-	"nyc": {
-		"all": true,
-		"reporter": [
-			"lcov",
-			"text"
-		]
-	},
 	"xo": {
 		"semicolon": false,
 		"rules": {
