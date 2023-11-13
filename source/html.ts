@@ -1,10 +1,10 @@
-import type {Formatter} from './types.js';
+import type { Formatter } from "./types.ts";
 
 function escape(text: string): string {
 	return text
-		.replace(/&/g, '&amp;')
-		.replace(/</g, '&lt;')
-		.replace(/>/g, '&gt;');
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;");
 }
 
 function bold(text: string): string {
@@ -33,7 +33,9 @@ function monospace(text: string): string {
 
 function monospaceBlock(text: string, programmingLanguage?: string): string {
 	if (programmingLanguage) {
-		return `<pre><code class="language-${programmingLanguage}">${escape(text)}</code></pre>`;
+		return `<pre><code class="language-${programmingLanguage}">${
+			escape(text)
+		}</code></pre>`;
 	}
 
 	return `<pre>${escape(text)}</pre>`;
@@ -49,7 +51,7 @@ function userMention(label: string, userId: number): string {
 
 /** https://core.telegram.org/bots/api#html-style */
 export const html = {
-	parse_mode: 'HTML',
+	parse_mode: "HTML",
 	escape,
 	bold,
 	italic,

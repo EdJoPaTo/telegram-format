@@ -1,0 +1,10 @@
+{
+	"lock": false,
+	"fmt": {
+		"useTabs": true
+	},
+	"exclude": [
+		"./dist/",
+		"./node_modules/"
+	]
+}

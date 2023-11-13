@@ -1,11 +1,11 @@
-import type {Formatter} from './types.js';
+import type { Formatter } from "./types.ts";
 
 function escapeInternal(text: string, escapeChars: string): string {
-	return text.replace(new RegExp(`[${escapeChars}\\\\]`, 'g'), '\\$&');
+	return text.replace(new RegExp(`[${escapeChars}\\\\]`, "g"), "\\$&");
 }
 
 function escape(text: string): string {
-	return text.replace(/[_*[\]()~`>#+\-=|{}.!\\]/g, '\\$&');
+	return text.replace(/[_*[\]()~`>#+\-=|{}.!\\]/g, "\\$&");
 }
 
 function bold(text: string): string {
@@ -29,26 +29,26 @@ function spoiler(text: string): string {
 }
 
 function monospace(text: string): string {
-	return '`' + escapeInternal(text, '`') + '`';
+	return "`" + escapeInternal(text, "`") + "`";
 }
 
 function monospaceBlock(text: string, programmingLanguage?: string): string {
-	let result = '';
-	result += '```';
+	let result = "";
+	result += "```";
 
 	if (programmingLanguage) {
 		result += programmingLanguage;
 	}
 
-	result += '\n';
-	result += escapeInternal(text, '`');
-	result += '\n';
-	result += '```';
+	result += "\n";
+	result += escapeInternal(text, "`");
+	result += "\n";
+	result += "```";
 	return result;
 }
 
 function url(label: string, url: string): string {
-	return `[${label}](${escapeInternal(url, ')')})`;
+	return `[${label}](${escapeInternal(url, ")")})`;
 }
 
 function userMention(label: string, userId: number): string {
@@ -57,7 +57,7 @@ function userMention(label: string, userId: number): string {
 
 /** https://core.telegram.org/bots/api#markdownv2-style */
 export const markdownv2 = {
-	parse_mode: 'MarkdownV2',
+	parse_mode: "MarkdownV2",
 	escape,
 	bold,
 	italic,
