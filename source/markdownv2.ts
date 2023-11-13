@@ -1,5 +1,3 @@
-// https://core.telegram.org/bots/api#markdownv2-style
-
 import type {Formatter} from './types.js';
 
 function escapeInternal(text: string, escapeChars: string): string {
@@ -57,6 +55,7 @@ function userMention(label: string, userId: number): string {
 	return url(label, `tg://user?id=${userId}`);
 }
 
+/** https://core.telegram.org/bots/api#markdownv2-style */
 export const markdownv2: Formatter = {
 	parse_mode: 'MarkdownV2',
 	escape,

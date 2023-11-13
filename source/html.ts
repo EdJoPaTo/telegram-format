@@ -1,5 +1,3 @@
-// https://core.telegram.org/bots/api#html-style
-
 import type {Formatter} from './types.js';
 
 function escape(text: string): string {
@@ -49,6 +47,7 @@ function userMention(label: string, userId: number): string {
 	return url(label, `tg://user?id=${userId}`);
 }
 
+/** https://core.telegram.org/bots/api#html-style */
 export const html: Formatter = {
 	parse_mode: 'HTML',
 	escape,
