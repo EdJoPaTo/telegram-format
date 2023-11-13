@@ -56,7 +56,7 @@ function userMention(label: string, userId: number): string {
 }
 
 /** https://core.telegram.org/bots/api#markdownv2-style */
-export const markdownv2: Formatter = {
+export const markdownv2 = {
 	parse_mode: 'MarkdownV2',
 	escape,
 	bold,
@@ -68,4 +68,4 @@ export const markdownv2: Formatter = {
 	monospaceBlock,
 	url,
 	userMention,
-};
+} as const satisfies Formatter;

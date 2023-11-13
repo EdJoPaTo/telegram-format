@@ -48,7 +48,7 @@ function userMention(label: string, userId: number): string {
 }
 
 /** https://core.telegram.org/bots/api#html-style */
-export const html: Formatter = {
+export const html = {
 	parse_mode: 'HTML',
 	escape,
 	bold,
@@ -60,4 +60,4 @@ export const html: Formatter = {
 	monospaceBlock,
 	url,
 	userMention,
-};
+} as const satisfies Formatter;
