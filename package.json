@@ -34,11 +34,11 @@
 		"xo": "^0.54.0"
 	},
 	"files": [
-		"dist/source",
+		"dist",
 		"!*.test.*"
 	],
-	"main": "./dist/source/index.js",
-	"types": "./dist/source/index.d.ts",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"xo": {
 		"semicolon": false,
 		"rules": {
@@ -49,8 +49,7 @@
 		"overrides": [
 			{
 				"files": [
-					"**/*.test.*",
-					"test/**/*.*"
+					"**/*.test.*"
 				],
 				"rules": {
 					"@typescript-eslint/prefer-readonly-parameter-types": "off"

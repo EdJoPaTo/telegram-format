@@ -1,5 +1,5 @@
 import test from 'ava'
-import {html as format} from '../source/index.js'
+import {html as format} from './html.js'
 
 test('bold', t => {
 	t.is(format.bold('bold'), '<b>bold</b>')

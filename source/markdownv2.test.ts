@@ -1,5 +1,5 @@
 import test from 'ava'
-import {markdownv2 as format} from '../source/index.js'
+import {markdownv2 as format} from './markdownv2.js'
 
 test('bold', t => {
 	t.is(format.bold('bold'), '*bold*')
