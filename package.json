@@ -10,10 +10,13 @@
 		"markdownv2"
 	],
 	"license": "MIT",
-	"repository": "EdJoPaTo/telegram-format",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/EdJoPaTo/telegram-format.git"
+	},
 	"author": {
 		"name": "EdJoPaTo",
-		"email": "telegram-format-npm-package@edjopato.de",
+		"email": "telegram-format-typescript-package@edjopato.de",
 		"url": "https://edjopato.de"
 	},
 	"scripts": {

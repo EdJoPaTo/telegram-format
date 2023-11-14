@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.206.0/assert/mod.ts";
+import { assertEquals } from "./deps.test.ts";
 import { markdownv2 as format } from "./markdownv2.ts";
 
 Deno.test("bold", () => {

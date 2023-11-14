@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.206.0/assert/mod.ts";
+import { assertEquals } from "./deps.test.ts";
 import { html as format } from "./html.ts";
 
 Deno.test("bold", () => {

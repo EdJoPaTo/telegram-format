@@ -1,7 +1,35 @@
 {
+	// https://deno.land/manual/getting_started/configuration_file
 	"lock": false,
+	// https://deno.land/manual/advanced/typescript/configuration
+	// https://www.typescriptlang.org/tsconfig/
+	"compilerOptions": {
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"useUnknownInCatchVariables": true
+	},
 	"fmt": {
 		"useTabs": true
+	},
+	"lint": {
+		"rules": {
+			// https://lint.deno.land/?all=on
+			"include": [
+				"default-param-last",
+				"eqeqeq",
+				"explicit-module-boundary-types",
+				"no-await-in-loop",
+				"no-eval",
+				"no-non-null-asserted-optional-chain",
+				"no-non-null-assertion",
+				"no-sparse-arrays"
+			]
+		}
 	},
 	"exclude": [
 		"./dist/",
