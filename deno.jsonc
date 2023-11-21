@@ -13,6 +13,10 @@
 		"noUnusedParameters": true,
 		"useUnknownInCatchVariables": true
 	},
+	"exclude": [
+		"./dist/",
+		"./node_modules/"
+	],
 	"fmt": {
 		"useTabs": true
 	},
@@ -30,9 +34,5 @@
 				"no-sparse-arrays"
 			]
 		}
-	},
-	"exclude": [
-		"./dist/",
-		"./node_modules/"
-	]
+	}
 }
