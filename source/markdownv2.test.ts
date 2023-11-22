@@ -1,68 +1,69 @@
-import { assertEquals } from "./deps.test.ts";
+import { strictEqual } from "node:assert";
+import { test } from "node:test";
 import { markdownv2 as format } from "./markdownv2.ts";
 
-Deno.test("bold", () => {
-	assertEquals(format.bold("bold"), "*bold*");
+test("bold", () => {
+	strictEqual(format.bold("bold"), "*bold*");
 });
 
-Deno.test("italic", () => {
-	assertEquals(format.italic("italic"), "_italic_");
+test("italic", () => {
+	strictEqual(format.italic("italic"), "_italic_");
 });
 
-Deno.test("strikethrough", () => {
-	assertEquals(format.strikethrough("strikethrough"), "~strikethrough~");
+test("strikethrough", () => {
+	strictEqual(format.strikethrough("strikethrough"), "~strikethrough~");
 });
 
-Deno.test("underline", () => {
-	assertEquals(format.underline("underline"), "__underline__");
+test("underline", () => {
+	strictEqual(format.underline("underline"), "__underline__");
 });
 
-Deno.test("spoiler", () => {
-	assertEquals(format.spoiler("spoiler"), "||spoiler||");
+test("spoiler", () => {
+	strictEqual(format.spoiler("spoiler"), "||spoiler||");
 });
 
-Deno.test("url", () => {
-	assertEquals(
+test("url", () => {
+	strictEqual(
 		format.url("me", "https://edjopato.de"),
 		"[me](https://edjopato.de)",
 	);
 });
 
-Deno.test("escape", () => {
-	assertEquals(format.escape("[h_]e(*y\\)`"), "\\[h\\_\\]e\\(\\*y\\\\\\)\\`");
+test("escape", () => {
+	strictEqual(format.escape("[h_]e(*y\\)`"), "\\[h\\_\\]e\\(\\*y\\\\\\)\\`");
 });
 
-Deno.test("escape with number", () => {
-	assertEquals(format.escape("h1e2y"), "h1e2y");
+test("escape with number", () => {
+	strictEqual(format.escape("h1e2y"), "h1e2y");
 });
 
-Deno.test("bold italic", () => {
-	assertEquals(format.bold(format.italic("green")), "*_green_*");
+test("bold italic", () => {
+	strictEqual(format.bold(format.italic("green")), "*_green_*");
 });
 
-Deno.test("user mention", () => {
-	assertEquals(
+test("user mention", () => {
+	strictEqual(
 		format.userMention("inline mention of a user", 123_456_789),
 		"[inline mention of a user](tg://user?id=123456789)",
 	);
 });
 
-Deno.test("monospace", () => {
-	assertEquals(
+test("monospace", () => {
+	strictEqual(
 		format.monospace("inline fixed-width code"),
 		"`inline fixed-width code`",
 	);
 });
 
-Deno.test("monospaceBlock w/o language", () => {
-	assertEquals(
+test("monospaceBlock w/o language", () => {
+	strictEqual(
 		format.monospaceBlock("pre-formatted fixed-width code block"),
 		"```\npre-formatted fixed-width code block\n```",
 	);
 });
 
-Deno.test("monospaceBlock w/ language", () => {
-	assertEquals(
+test("monospaceBlock w/ language", () => {
+	strictEqual(
 		format.monospaceBlock(
 			"pre-formatted fixed-width code block written in the Python programming language",
 			"python",

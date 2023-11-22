@@ -21,16 +21,22 @@
 	},
 	"scripts": {
 		"prepare": "deno2node",
-		"test": "echo use deno test && exit 1"
+		"pretest": "deno2node",
+		"test": "node --test"
 	},
 	"type": "module",
 	"engines": {
 		"node": ">=14"
 	},
 	"devDependencies": {
+		"@types/node": "^16.18.64",
 		"deno2node": "1.10.1"
 	},
-	"files": ["dist"],
+	"files": [
+		"dist",
+		"!**/*.test.*",
+		"!**/test.*"
+	],
 	"main": "./dist/mod.js",
 	"types": "./dist/mod.d.ts"
 }

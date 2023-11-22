@@ -1,67 +1,68 @@
-import { assertEquals } from "./deps.test.ts";
+import { strictEqual } from "node:assert";
+import { test } from "node:test";
 import { html as format } from "./html.ts";
 
-Deno.test("bold", () => {
-	assertEquals(format.bold("bold"), "<b>bold</b>");
+test("bold", () => {
+	strictEqual(format.bold("bold"), "<b>bold</b>");
 });
 
-Deno.test("italic", () => {
-	assertEquals(format.italic("italic"), "<i>italic</i>");
+test("italic", () => {
+	strictEqual(format.italic("italic"), "<i>italic</i>");
 });
 
-Deno.test("strikethrough", () => {
-	assertEquals(format.strikethrough("strikethrough"), "<s>strikethrough</s>");
+test("strikethrough", () => {
+	strictEqual(format.strikethrough("strikethrough"), "<s>strikethrough</s>");
 });
 
-Deno.test("underline", () => {
-	assertEquals(format.underline("underline"), "<u>underline</u>");
+test("underline", () => {
+	strictEqual(format.underline("underline"), "<u>underline</u>");
 });
 
-Deno.test("spoiler", () => {
-	assertEquals(
+test("spoiler", () => {
+	strictEqual(
 		format.spoiler("spoiler"),
 		'<span class="tg-spoiler">spoiler</span>',
 	);
 });
 
-Deno.test("url", () => {
-	assertEquals(
+test("url", () => {
+	strictEqual(
 		format.url("me", "https://edjopato.de"),
 		'<a href="https://edjopato.de">me</a>',
 	);
 });
 
-Deno.test("escape", () => {
-	assertEquals(format.escape("h<e>y"), "h&lt;e&gt;y");
+test("escape", () => {
+	strictEqual(format.escape("h<e>y"), "h&lt;e&gt;y");
 });
 
-Deno.test("bold italic", () => {
-	assertEquals(format.bold(format.italic("green")), "<b><i>green</i></b>");
+test("bold italic", () => {
+	strictEqual(format.bold(format.italic("green")), "<b><i>green</i></b>");
 });
 
-Deno.test("user mention", () => {
-	assertEquals(
+test("user mention", () => {
+	strictEqual(
 		format.userMention("inline mention of a user", 123_456_789),
 		'<a href="tg://user?id=123456789">inline mention of a user</a>',
 	);
 });
 
-Deno.test("monospace", () => {
-	assertEquals(
+test("monospace", () => {
+	strictEqual(
 		format.monospace("inline fixed-width code"),
 		"<code>inline fixed-width code</code>",
 	);
 });
 
-Deno.test("monospaceBlock w/o language", () => {
-	assertEquals(
+test("monospaceBlock w/o language", () => {
+	strictEqual(
 		format.monospaceBlock("pre-formatted fixed-width code block"),
 		"<pre>pre-formatted fixed-width code block</pre>",
 	);
 });
 
-Deno.test("monospaceBlock w/ language", () => {
-	assertEquals(
+test("monospaceBlock w/ language", () => {
+	strictEqual(
 		format.monospaceBlock(
 			"pre-formatted fixed-width code block written in the Python programming language",
 			"python",

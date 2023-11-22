@@ -2,10 +2,6 @@
 	"include": [
 		"source"
 	],
-	"exclude": [
-		"**/*.test.*",
-		"**/test.*"
-	],
 	"compilerOptions": {
 		"declaration": true,
 		"target": "ES2020", // Node.js 14
