@@ -4,7 +4,7 @@ on:
   push:
   pull_request:
   schedule:
-    # Check if it works with current versions
+    # Check if it works with current deno version
     - cron: '42 2 * * 6' # weekly on Saturday 2:42 UTC
 
 jobs:
@@ -30,28 +30,3 @@ jobs:
       - run: deno cache source/*.ts
       - run: deno check source/*.ts
       - run: deno test
-
-  nodejs:
-    name: Node.js
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      id-token: write
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 'lts/*'
-          registry-url: 'https://registry.npmjs.org'
-      - run: npm install
-      - run: npm test
-      - run: npm pack
-      - run: npm publish
-        if: startsWith(github.ref, 'refs/tags/v')
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_ACCESS: public
-          NPM_CONFIG_PROVENANCE: true
-      - name: Create GitHub release
-        if: startsWith(github.ref, 'refs/tags/v')
-        uses: softprops/action-gh-release@v1
