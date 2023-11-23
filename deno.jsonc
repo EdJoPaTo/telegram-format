@@ -15,6 +15,7 @@
 	},
 	"exclude": [
 		"./dist/",
+		"./docs/",
 		"./node_modules/"
 	],
 	"fmt": {
@@ -34,5 +35,8 @@
 				"no-sparse-arrays"
 			]
 		}
+	},
+	"tasks": {
+		"doc": "deno doc --html --name=telegram_format source/mod.ts"
 	}
 }

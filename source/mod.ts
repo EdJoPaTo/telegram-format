@@ -1,5 +1,5 @@
 export type { Formatter } from "./types.ts";
 
-export { html } from "./html.ts";
-export { markdown } from "./markdown.ts";
-export { markdownv2 } from "./markdownv2.ts";
+export * as html from "./html.ts";
+export * as markdown from "./markdown.ts";
+export * as markdownv2 from "./markdownv2.ts";

@@ -1,6 +1,9 @@
 import { strictEqual } from "node:assert";
 import { test } from "node:test";
-import { html as format } from "./html.ts";
+import * as format from "./html.ts";
+import { Formatter } from "./types.ts";
+
+format satisfies Formatter;
 
 test("bold", () => {
 	strictEqual(format.bold("bold"), "<b>bold</b>");

@@ -1,6 +1,9 @@
 import { strictEqual } from "node:assert";
 import { test } from "node:test";
-import { markdownv2 as format } from "./markdownv2.ts";
+import * as format from "./markdownv2.ts";
+import { Formatter } from "./types.ts";
+
+format satisfies Formatter;
 
 test("bold", () => {
 	strictEqual(format.bold("bold"), "*bold*");
