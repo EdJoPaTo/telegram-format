@@ -1,5 +1,6 @@
 .vscode
 /*-*.*.*.tgz
+coverage
 dist
 docs
 node_modules

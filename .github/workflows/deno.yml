@@ -29,4 +29,5 @@ jobs:
 
       - run: deno cache source/*.ts
       - run: deno check source/*.ts
-      - run: deno test
+      - run: deno test --coverage=coverage/
+      - run: deno coverage coverage/
