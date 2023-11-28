@@ -26,7 +26,7 @@ import {/* ... */} from "https://deno.land/x/telegram_format/mod.ts";
 
 ## Usage
 
-```js
+```ts
 import { html as format } from "telegram-format";
 import { markdownv2 as format } from "telegram-format";
 
@@ -54,7 +54,7 @@ fast.
 When you have something that might be unescaped you need to use `format.escape`
 before formatting it.
 
-```js
+```ts
 const username = "master_yoda";
 format.italic(format.escape(username));
 ```
