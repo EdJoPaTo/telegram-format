@@ -1,0 +1,44 @@
+{
+	// https://deno.land/manual/getting_started/configuration_file
+	"lock": false,
+	// https://deno.land/manual/advanced/typescript/configuration
+	// https://www.typescriptlang.org/tsconfig/
+	"compilerOptions": {
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"useUnknownInCatchVariables": true
+	},
+	"exclude": [
+		"./coverage/",
+		"./dist/",
+		"./docs/",
+		"./node_modules/"
+	],
+	"fmt": {
+		"useTabs": true
+	},
+	"lint": {
+		"rules": {
+			// https://lint.deno.land/?all=on
+			"include": [
+				"default-param-last",
+				"eqeqeq",
+				"explicit-module-boundary-types",
+				"no-await-in-loop",
+				"no-eval",
+				"no-non-null-asserted-optional-chain",
+				"no-non-null-assertion",
+				"no-sparse-arrays"
+			]
+		}
+	},
+	"tasks": {
+		"coverage": "deno test --coverage=coverage/ && deno coverage coverage/",
+		"doc": "deno doc --html --name=telegram_format source/mod.ts"
+	}
+}

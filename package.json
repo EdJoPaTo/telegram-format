@@ -10,51 +10,33 @@
 		"markdownv2"
 	],
 	"license": "MIT",
-	"repository": "EdJoPaTo/telegram-format",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/EdJoPaTo/telegram-format.git"
+	},
 	"author": {
 		"name": "EdJoPaTo",
-		"email": "telegram-format-npm-package@edjopato.de",
+		"email": "telegram-format-typescript-package@edjopato.de",
 		"url": "https://edjopato.de"
 	},
 	"scripts": {
-		"build": "del-cli dist && tsc",
-		"prepack": "npm run build",
-		"test": "tsc --sourceMap && xo && c8 --all ava"
+		"prepare": "deno2node",
+		"pretest": "deno2node",
+		"test": "node --test"
 	},
 	"type": "module",
 	"engines": {
 		"node": ">=14"
 	},
 	"devDependencies": {
-		"@sindresorhus/tsconfig": "^5.0.0",
-		"ava": "^5.0.1",
-		"c8": "^8.0.1",
-		"del-cli": "^5.0.0",
-		"typescript": "^5.0.2",
-		"xo": "^0.56.0"
+		"@types/node": "^16.18.64",
+		"deno2node": "1.10.1"
 	},
 	"files": [
 		"dist",
-		"!*.test.*"
+		"!*.test.*",
+		"!test.*"
 	],
-	"main": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"xo": {
-		"rules": {
-			"@typescript-eslint/naming-convention": "off",
-			"@typescript-eslint/prefer-readonly-parameter-types": "error",
-			"unicorn/prefer-string-replace-all": "off",
-			"ava/no-ignored-test-files": "off"
-		},
-		"overrides": [
-			{
-				"files": [
-					"**/*.test.*"
-				],
-				"rules": {
-					"@typescript-eslint/prefer-readonly-parameter-types": "off"
-				}
-			}
-		]
-	}
+	"main": "./dist/mod.js",
+	"types": "./dist/mod.d.ts"
 }

@@ -1,63 +1,64 @@
-import type {Formatter} from './types.js';
+/** https://core.telegram.org/bots/api#html-style */
+export const parse_mode = "HTML";
 
-function escape(text: string): string {
+/** Escape the input text to be displayed as it is */
+export function escape(text: string): string {
 	return text
-		.replace(/&/g, '&amp;')
-		.replace(/</g, '&lt;')
-		.replace(/>/g, '&gt;');
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;");
 }
 
-function bold(text: string): string {
+/** Format the input text bold */
+export function bold(text: string): string {
 	return `<b>${text}</b>`;
 }
 
-function italic(text: string): string {
+/** Format the input text italic */
+export function italic(text: string): string {
 	return `<i>${text}</i>`;
 }
 
-function strikethrough(text: string): string {
+/** Strikethrough the input text */
+export function strikethrough(text: string): string {
 	return `<s>${text}</s>`;
 }
 
-function underline(text: string): string {
+/** Underline the input text */
+export function underline(text: string): string {
 	return `<u>${text}</u>`;
 }
 
-function spoiler(text: string): string {
+/** Format the input text as spoiler */
+export function spoiler(text: string): string {
 	return `<span class="tg-spoiler">${text}</span>`;
 }
 
-function monospace(text: string): string {
+/** Format the input text as monospace */
+export function monospace(text: string): string {
 	return `<code>${escape(text)}</code>`;
 }
 
-function monospaceBlock(text: string, programmingLanguage?: string): string {
+/** Format the input text as a monospace block optionally with a programming language */
+export function monospaceBlock(
+	text: string,
+	programmingLanguage?: string,
+): string {
 	if (programmingLanguage) {
-		return `<pre><code class="language-${programmingLanguage}">${escape(text)}</code></pre>`;
+		return `<pre><code class="language-${programmingLanguage}">${
+			escape(text)
+		}</code></pre>`;
 	}
 
 	return `<pre>${escape(text)}</pre>`;
 }
 
-function url(label: string, url: string): string {
+/** Create an url with a label text */
+export function url(label: string, url: string): string {
 	return `<a href="${url}">${label}</a>`;
 }
 
-function userMention(label: string, userId: number): string {
+/** Create a user mention with a label text */
+export function userMention(label: string, userId: number): string {
 	return url(label, `tg://user?id=${userId}`);
 }
-
-/** https://core.telegram.org/bots/api#html-style */
-export const html = {
-	parse_mode: 'HTML',
-	escape,
-	bold,
-	italic,
-	strikethrough,
-	underline,
-	spoiler,
-	monospace,
-	monospaceBlock,
-	url,
-	userMention,
-} as const satisfies Formatter;

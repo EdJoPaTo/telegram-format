@@ -1,0 +1,33 @@
+name: Deno
+
+on:
+  push:
+  pull_request:
+  schedule:
+    # Check if it works with current deno version
+    - cron: '42 2 * * 6' # weekly on Saturday 2:42 UTC
+
+jobs:
+  denofmt-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+      - uses: actions/checkout@v4
+
+      - run: deno lint
+      - run: deno fmt --check
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+      - uses: actions/checkout@v4
+
+      - run: deno cache source/*.ts
+      - run: deno check source/*.ts
+      - run: deno test --coverage=coverage/
+      - run: deno coverage coverage/

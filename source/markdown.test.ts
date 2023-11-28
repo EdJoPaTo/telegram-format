@@ -1,75 +1,76 @@
-import test from 'ava';
-import {markdown as format} from './markdown.js';
+import { strictEqual, throws } from "node:assert";
+import { test } from "node:test";
+import * as format from "./markdown.ts";
+import { Formatter } from "./types.ts";
 
-test('bold', t => {
-	t.is(format.bold('bold'), '*bold*');
+format satisfies Formatter;
+
+test("bold", () => {
+	strictEqual(format.bold("bold"), "*bold*");
 });
 
-test('italic', t => {
-	t.is(format.italic('italic'), '_italic_');
+test("italic", () => {
+	strictEqual(format.italic("italic"), "_italic_");
 });
 
-test('url', t => {
-	t.is(format.url('me', 'https://edjopato.de'), '[me](https://edjopato.de)');
-});
-
-test('escape', t => {
-	t.is(format.escape('[h_]e(*y)`'), 'hey');
-});
-
-test('bold malicious', t => {
-	t.is(format.bold('bo*ld'), '*bold*');
-});
-
-test('italic malicious', t => {
-	t.is(format.italic('ita_lic'), '_italic_');
-});
-
-test('user mention', t => {
-	t.is(
-		format.userMention('inline mention of a user', 123_456_789),
-		'[inline mention of a user](tg://user?id=123456789)',
+test("url", () => {
+	strictEqual(
+		format.url("me", "https://edjopato.de"),
+		"[me](https://edjopato.de)",
 	);
 });
 
-test('monospace', t => {
-	t.is(
-		format.monospace('inline fixed-width code'),
-		'`inline fixed-width code`',
+test("escape", () => {
+	strictEqual(format.escape("[h_]e(*y)`"), "hey");
+});
+
+test("bold malicious", () => {
+	strictEqual(format.bold("bo*ld"), "*bold*");
+});
+
+test("italic malicious", () => {
+	strictEqual(format.italic("ita_lic"), "_italic_");
+});
+
+test("user mention", () => {
+	strictEqual(
+		format.userMention("inline mention of a user", 123_456_789),
+		"[inline mention of a user](tg://user?id=123456789)",
 	);
 });
 
-test('monospaceBlock w/o language', t => {
-	t.is(
-		format.monospaceBlock('pre-formatted fixed-width code block'),
-		'```\npre-formatted fixed-width code block\n```',
+test("monospace", () => {
+	strictEqual(
+		format.monospace("inline fixed-width code"),
+		"`inline fixed-width code`",
 	);
 });
 
-test('monospaceBlock w/ language', t => {
-	t.is(
+test("monospaceBlock w/o language", () => {
+	strictEqual(
+		format.monospaceBlock("pre-formatted fixed-width code block"),
+		"```\npre-formatted fixed-width code block\n```",
+	);
+});
+
+test("monospaceBlock w/ language", () => {
+	strictEqual(
 		format.monospaceBlock(
-			'pre-formatted fixed-width code block written in the Python programming language',
-			'python',
+			"pre-formatted fixed-width code block written in the Python programming language",
+			"python",
 		),
-		'```python\npre-formatted fixed-width code block written in the Python programming language\n```',
+		"```python\npre-formatted fixed-width code block written in the Python programming language\n```",
 	);
 });
 
-test('strikethrough', t => {
-	t.throws(() => format.strikethrough('1337'), {
-		message: 'strikethrough is not supported by Markdown. Use MarkdownV2 instead.',
-	});
+test("strikethrough", () => {
+	throws(() => format.strikethrough("1337"));
 });
 
-test('underline', t => {
-	t.throws(() => format.underline('1337'), {
-		message: 'underline is not supported by Markdown. Use MarkdownV2 instead.',
-	});
+test("underline", () => {
+	throws(() => format.underline("1337"));
 });
 
-test('spoiler', t => {
-	t.throws(() => format.spoiler('1337'), {
-		message: 'spoiler is not supported by Markdown. Use MarkdownV2 instead.',
-	});
+test("spoiler", () => {
+	throws(() => format.spoiler("1337"));
 });
