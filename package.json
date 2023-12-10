@@ -1,6 +1,6 @@
 {
 	"name": "telegram-format",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"description": "Format Telegram message texts with Markdown or HTML",
 	"keywords": [
 		"telegram",
