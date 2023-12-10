@@ -4,7 +4,7 @@
 	],
 	"compilerOptions": {
 		"declaration": true,
-		"target": "ES2020", // Node.js 14
+		"target": "ES2019", // Node.js 12
 		"outDir": "dist"
 	}
 }
