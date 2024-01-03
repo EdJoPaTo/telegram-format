@@ -4,6 +4,8 @@
 	],
 	"compilerOptions": {
 		"declaration": true,
+		"moduleResolution": "Node",
+		"skipLibCheck": true,
 		"target": "ES2019", // Node.js 12
 		"outDir": "dist"
 	}
