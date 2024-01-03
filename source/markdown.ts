@@ -16,21 +16,21 @@ export function italic(text: string): string {
 	return `_${text.replace(/_/g, "")}_`;
 }
 
-/** @deprecated unsupported by Telegram. Use MarkdownV2 or HTML instead */
+/** unsupported by Telegram. Use MarkdownV2 or HTML instead @deprecated */
 export function strikethrough(_text: string): string {
 	throw new Error(
 		"strikethrough is not supported by Markdown. Use MarkdownV2 instead.",
 	);
 }
 
-/** @deprecated unsupported by Telegram. Use MarkdownV2 or HTML instead */
+/** unsupported by Telegram. Use MarkdownV2 or HTML instead @deprecated */
 export function underline(_text: string): string {
 	throw new Error(
 		"underline is not supported by Markdown. Use MarkdownV2 instead.",
 	);
 }
 
-/** @deprecated unsupported by Telegram. Use MarkdownV2 or HTML instead */
+/** unsupported by Telegram. Use MarkdownV2 or HTML instead @deprecated */
 export function spoiler(_text: string): string {
 	throw new Error(
 		"spoiler is not supported by Markdown. Use MarkdownV2 instead.",
