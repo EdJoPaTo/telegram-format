@@ -19,6 +19,18 @@ jobs:
       - run: deno lint
       - run: deno fmt --check
 
+  doc:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+      - uses: actions/checkout@v4
+
+      - run: deno cache source/mod.ts
+      - run: deno doc --lint source/mod.ts
+
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 15
