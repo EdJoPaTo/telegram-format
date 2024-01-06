@@ -71,6 +71,14 @@ test("underline", () => {
 	throws(() => format.underline("1337"));
 });
 
+test("blockquote", () => {
+	throws(() => format.blockquote("1337"));
+});
+
 test("spoiler", () => {
 	throws(() => format.spoiler("1337"));
+});
+
+test("tgEmoji", () => {
+	throws(() => format.tgEmoji("👍", "5368324170671202286"));
 });

@@ -21,8 +21,26 @@ test("underline", () => {
 	strictEqual(format.underline("underline"), "__underline__");
 });
 
+test("blockquote", () => {
+	strictEqual(format.blockquote("blockquote"), ">blockquote");
+});
+
+test("blockquote multiline", () => {
+	strictEqual(
+		format.blockquote("blockquote\nmultiline"),
+		">blockquote\n>multiline",
+	);
+});
+
 test("spoiler", () => {
 	strictEqual(format.spoiler("spoiler"), "||spoiler||");
+});
+
+test("tgEmoji", () => {
+	strictEqual(
+		format.tgEmoji("👍", "5368324170671202286"),
+		"![👍](tg://emoji?id=5368324170671202286)",
+	);
 });
 
 test("url", () => {

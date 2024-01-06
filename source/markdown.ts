@@ -31,9 +31,23 @@ export function underline(_text: string): string {
 }
 
 /** unsupported by Telegram. Use MarkdownV2 or HTML instead @deprecated */
+export function blockquote(_text: string): string {
+	throw new Error(
+		"blockquote is not supported by Markdown. Use MarkdownV2 instead.",
+	);
+}
+
+/** unsupported by Telegram. Use MarkdownV2 or HTML instead @deprecated */
 export function spoiler(_text: string): string {
 	throw new Error(
 		"spoiler is not supported by Markdown. Use MarkdownV2 instead.",
+	);
+}
+
+/** unsupported by Telegram. Use MarkdownV2 or HTML instead @deprecated */
+export function tgEmoji(_fallback: string, _emojiId: string): string {
+	throw new Error(
+		"tgEmoji is not supported by Markdown. Use MarkdownV2 instead.",
 	);
 }
 

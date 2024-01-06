@@ -21,10 +21,31 @@ test("underline", () => {
 	strictEqual(format.underline("underline"), "<u>underline</u>");
 });
 
+test("blockquote", () => {
+	strictEqual(
+		format.blockquote("blockquote"),
+		"<blockquote>blockquote</blockquote>",
+	);
+});
+
+test("blockquote multiline", () => {
+	strictEqual(
+		format.blockquote("blockquote\nmultiline"),
+		"<blockquote>blockquote\nmultiline</blockquote>",
+	);
+});
+
 test("spoiler", () => {
 	strictEqual(
 		format.spoiler("spoiler"),
 		'<span class="tg-spoiler">spoiler</span>',
+	);
+});
+
+test("tgEmoji", () => {
+	strictEqual(
+		format.tgEmoji("👍", "5368324170671202286"),
+		'<tg-emoji emoji-id="5368324170671202286">👍</tg-emoji>',
 	);
 });
 

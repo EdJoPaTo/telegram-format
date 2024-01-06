@@ -30,9 +30,24 @@ export function underline(text: string): string {
 	return `__${text}__`;
 }
 
+/** Format the input text as blockquote */
+export function blockquote(text: string): string {
+	const lines = text.split("\n");
+	return lines.map((o) => ">" + o).join("\n");
+}
+
 /** Format the input text as spoiler */
 export function spoiler(text: string): string {
 	return `||${text}||`;
+}
+
+/** Create a custom Telegram Emoji.
+ *
+ * A valid emoji must be used as the fallback. The emoji will be shown instead of the custom emoji in places where a custom emoji cannot be displayed (e.g., system notifications) or if the message is forwarded by a non-premium user. It is recommended to use the emoji from the emoji field of the custom emoji sticker.
+ * Custom emoji entities can only be used by bots that purchased additional usernames on Fragment.
+ */
+export function tgEmoji(fallback: string, emojiId: string): string {
+	return `![${fallback}](tg://emoji?id=${emojiId})`;
 }
 
 /** Format the input text as monospace */
