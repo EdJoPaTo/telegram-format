@@ -1,9 +1,11 @@
-name: JSR
+name: Publish to JSR
 
 on:
   push:
     branches:
       - main
+    paths:
+      - deno.json*
 
 jobs:
   jsr:

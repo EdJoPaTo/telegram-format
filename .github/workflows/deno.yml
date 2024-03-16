@@ -44,6 +44,17 @@ jobs:
       - run: deno cache source/mod.ts
       - run: deno doc --lint source/mod.ts
 
+  publish-dry-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+      - uses: actions/checkout@v4
+
+      - run: deno cache source/mod.ts
+      - run: deno publish --dry-run
+
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 15
