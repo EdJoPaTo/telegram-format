@@ -20,6 +20,18 @@ jobs:
       - run: deno lint
       - run: deno fmt --check
 
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+      - uses: actions/checkout@v4
+
+      - run: deno cache source/*.ts
+      - run: deno check source/*.ts
+
   doc:
     runs-on: ubuntu-latest
     continue-on-error: true
@@ -42,6 +54,5 @@ jobs:
       - uses: actions/checkout@v4
 
       - run: deno cache source/*.ts
-      - run: deno check source/*.ts
-      - run: deno test --coverage=coverage/
+      - run: deno test --no-check --coverage=coverage/
       - run: deno coverage coverage/
