@@ -2,7 +2,8 @@
 
 [![NPM Version](https://img.shields.io/npm/v/telegram-format.svg)](https://www.npmjs.com/package/telegram-format)
 [![node](https://img.shields.io/node/v/telegram-format.svg)](https://www.npmjs.com/package/telegram-format)
-[![JSR Version](https://jsr.io/badges/@edjopato/telegram-format) ![JSR Score](https://jsr.io/badges/@edjopato/telegram-format/score)](https://jsr.io/@edjopato/telegram-format)
+[![JSR Version](https://jsr.io/badges/@edjopato/telegram-format)](https://jsr.io/@edjopato/telegram-format)
+[![JSR Score](https://jsr.io/badges/@edjopato/telegram-format/score)](https://jsr.io/@edjopato/telegram-format/score)
 
 > Format Telegram message texts with Markdown or HTML
 
