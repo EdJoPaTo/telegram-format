@@ -61,11 +61,11 @@ format.italic(format.escape(username));
 
 `format.monospace` and `format.monospaceBlock` will escape on their own as they
 only need to escape specific characters. You do not need to escape the input in
-this cases.
+these cases.
 
 `MarkdownV2` and `HTML` are fairly similar in escaping inputs but `Markdown` is
 not. `Markdown` is still supported by this library and by Telegram for legacy
-reasons but it behaves a bit differently. `Markdown` still escapes inputs and
+reasons, but it behaves a bit differently. `Markdown` still escapes inputs and
 does not need `format.escape` before. Also nested formatting is not supported by
 telegram itself. Consider switching to `MarkdownV2` or `HTML` for simplicity
 reasons.
