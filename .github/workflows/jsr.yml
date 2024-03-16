@@ -1,0 +1,20 @@
+name: JSR
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  jsr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+      - uses: actions/checkout@v4
+
+      - run: deno publish

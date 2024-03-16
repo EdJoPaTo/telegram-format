@@ -1,5 +1,7 @@
 {
-	// https://deno.land/manual/getting_started/configuration_file
+	"name": "@edjopato/telegram-format",
+	"version": "3.1.0",
+	"exports": "./source/mod.ts",
 	"lock": false,
 	// https://deno.land/manual/advanced/typescript/configuration
 	// https://www.typescriptlang.org/tsconfig/
@@ -34,8 +36,20 @@
 			]
 		}
 	},
+	"publish": {
+		"include": [
+			"deno.json*",
+			"LICENSE*",
+			"README*",
+			"source"
+		],
+		"exclude": [
+			"**/*.test.*",
+			"**/test.*"
+		]
+	},
 	"tasks": {
 		"coverage": "deno test --coverage=coverage/ && deno coverage coverage/",
-		"doc": "deno doc --html --name=telegram_format source/mod.ts"
+		"doc": "deno doc --html --name=telegram-format source/mod.ts"
 	}
 }

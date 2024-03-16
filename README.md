@@ -2,7 +2,7 @@
 
 [![NPM Version](https://img.shields.io/npm/v/telegram-format.svg)](https://www.npmjs.com/package/telegram-format)
 [![node](https://img.shields.io/node/v/telegram-format.svg)](https://www.npmjs.com/package/telegram-format)
-[![deno module](https://shield.deno.dev/x/telegram_format)](https://deno.land/x/telegram_format)
+[![JSR Version](https://jsr.io/badges/@edjopato/telegram-format) ![JSR Score](https://jsr.io/badges/@edjopato/telegram-format/score)](https://jsr.io/@edjopato/telegram-format)
 
 > Format Telegram message texts with Markdown or HTML
 
@@ -20,8 +20,8 @@ npm install telegram-format
 
 Deno:
 
-```ts
-import {/* ... */} from "https://deno.land/x/telegram_format/mod.ts";
+```bash
+deno add @edjopato/telegram-format
 ```
 
 ## Usage
