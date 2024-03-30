@@ -11,6 +11,7 @@ on:
 jobs:
   denofmt-and-lint:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: denoland/setup-deno@v1
         with:
@@ -35,6 +36,7 @@ jobs:
   doc:
     runs-on: ubuntu-latest
     continue-on-error: true
+    timeout-minutes: 15
     steps:
       - uses: denoland/setup-deno@v1
         with:
@@ -46,6 +48,7 @@ jobs:
 
   publish-dry-run:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: denoland/setup-deno@v1
         with:
