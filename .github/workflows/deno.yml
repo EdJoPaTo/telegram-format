@@ -6,16 +6,16 @@ on:
   workflow_dispatch:
   schedule:
     # Check if it works with current deno version
-    - cron: '42 2 * * 6' # weekly on Saturday 2:42 UTC
+    - cron: "42 2 * * 6" # weekly on Saturday 2:42 UTC
 
 jobs:
   denofmt-and-lint:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: denoland/setup-deno@v1
+      - uses: denoland/setup-deno@v2
         with:
-          deno-version: v1.x
+          deno-version: v2.x
       - uses: actions/checkout@v4
 
       - run: deno lint
@@ -25,9 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: denoland/setup-deno@v1
+      - uses: denoland/setup-deno@v2
         with:
-          deno-version: v1.x
+          deno-version: v2.x
       - uses: actions/checkout@v4
 
       - run: deno cache source/*.ts
@@ -38,9 +38,9 @@ jobs:
     continue-on-error: true
     timeout-minutes: 15
     steps:
-      - uses: denoland/setup-deno@v1
+      - uses: denoland/setup-deno@v2
         with:
-          deno-version: v1.x
+          deno-version: v2.x
       - uses: actions/checkout@v4
 
       - run: deno cache source/mod.ts
@@ -50,9 +50,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: denoland/setup-deno@v1
+      - uses: denoland/setup-deno@v2
         with:
-          deno-version: v1.x
+          deno-version: v2.x
       - uses: actions/checkout@v4
 
       - run: deno cache source/mod.ts
@@ -62,9 +62,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: denoland/setup-deno@v1
+      - uses: denoland/setup-deno@v2
         with:
-          deno-version: v1.x
+          deno-version: v2.x
       - uses: actions/checkout@v4
 
       - run: deno cache source/*.ts

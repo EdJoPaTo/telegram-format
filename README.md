@@ -32,16 +32,16 @@ import { html as format } from "telegram-format";
 import { markdownv2 as format } from "telegram-format";
 
 format.bold("hey");
-//=> '*hey*'
+//=> "*hey*"
 
 format.italic("you");
-//=> '_you_'
+//=> "_you_"
 
 format.bold(format.italic("they"));
-//=> '*_they_*'
+//=> "*_they_*"
 
 format.url("me", "https://edjopato.de");
-//=> '[me](https://edjopato.de)'
+//=> "[me](https://edjopato.de)"
 
 // Legacy but still works
 import { markdown as format } from "telegram-format";
